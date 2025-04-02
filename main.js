@@ -81,15 +81,12 @@ function createResourceCard(config) {
       ${config.description ? `<div class="resource-description">${config.description}</div>` : ''}
     </div>
     <div class="button-row">
-      <div class="dropdown">
-        <button class="dropdown-btn">操作</button>
-        <div class="dropdown-content">
-          <a href="#" data-action="copy" data-url="${config.resourceUrl}">复制</a>
-          <a href="#" data-action="install" data-url="${config.resourceUrl}">添加</a>
-          <a href="#" data-action="help">教程</a>
-          <a href="#" data-action="special-install" data-url="${config.resourceUrl}">特殊添加</a>
-      </div>
-      </div>
+      <button class="btn copy-btn" data-action="copy" data-url="${config.resourceUrl}">
+        <i class="icon-copy"></i> 复制
+      </button>
+      <button class="btn add-btn" data-action="install" data-url="${config.resourceUrl}">
+        <i class="icon-add"></i> 添加
+      </button>
     </div>
   `;
   return resourceGroup;
@@ -109,12 +106,12 @@ window.onload = function () {
 // 初始化事件监听器
 function initializeEventListeners() {
   document.addEventListener('click', (event) => {
-    const link = event.target.closest('a[data-action]');
-    if (!link) return;
+    const button = event.target.closest('button[data-action], a[data-action]');
+    if (!button) return;
 
     event.preventDefault();
-    const action = link.getAttribute('data-action');
-    const url = link.getAttribute('data-url');
+    const action = button.getAttribute('data-action');
+    const url = button.getAttribute('data-url');
 
     switch (action) {
       case 'copy':

@@ -113,14 +113,43 @@ a {
   flex-shrink: 0;
   min-width: 70px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px var(--shadow-color);
 }
 
 .copy-btn {
   background-color: var(--btn-success);
 }
 
-.help-btn {
-  background-color: var(--btn-warning);
+.add-btn {
+  background-color: var(--btn-primary);
+}
+
+/* 图标样式 */
+.icon-copy, .icon-add {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.icon-copy {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z'/%3E%3C/svg%3E");
+}
+
+.icon-add {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z'/%3E%3C/svg%3E");
 }
 
 /* 响应式布局 */
@@ -141,102 +170,5 @@ a {
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
-  }
-}
-
-/* 下拉菜单 */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-btn {
-  padding: 8px 16px;
-  background-color: var(--btn-primary);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9em;
-  min-width: 90px;
-  position: relative;
-  z-index: 2;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 4px var(--shadow-color);
-}
-
-.dropdown-content {
-  position: absolute;
-  right: 100%;
-  top: 0;
-  background-color: var(--bg-secondary);
-  min-width: 160px;
-  box-shadow: 0 4px 16px var(--shadow-color);
-  z-index: 1;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  margin-right: 10px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(15px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.dropdown-content a {
-  color: var(--text-primary);
-  padding: 10px 16px;
-  text-decoration: none;
-  display: block;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  font-size: 0.95em;
-  border-radius: 4px;
-  margin: 2px;
-}
-
-.dropdown-content a:hover {
-  background-color: var(--bg-primary);
-  transform: translateX(-3px);
-  color: var(--link-color);
-}
-
-.dropdown:hover .dropdown-content {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0);
-}
-
-.dropdown:hover .dropdown-btn {
-  background-color: var(--link-hover);
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px var(--shadow-color);
-}
-
-/* 移动端下拉菜单适配 */
-@media (max-width: 767px) {
-  .dropdown-content {
-    position: absolute;
-    right: 0;
-    top: 100%;
-    margin-top: 8px;
-    margin-right: 0;
-    width: auto;
-    min-width: 200px;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 8px;
-  }
-
-  .dropdown-content a {
-    padding: 8px 12px;
-    text-align: center;
-    flex: 1;
-    margin: 0 4px;
-  }
-
-  .dropdown-content a:hover {
-    transform: translateY(-2px);
   }
 }

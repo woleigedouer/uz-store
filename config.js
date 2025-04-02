@@ -39,5 +39,10 @@ export const RESOURCE_CONFIGS = [
     title: '采集站',
     description: '采集站资源，不需要添加太多两个够用',
     resourceUrl: 'https://github.moeyy.xyz/https://raw.githubusercontent.com/YYDS678/uzVideo/main/video_sources_default.json'
+  },
+  {
+    title: '嗅探综合',
+    description: '来自<a href="https://github.com/woleigedouer">豆</a>',
+    resourceUrl: 'https://raw.githubusercontent.com/woleigedouer/uzVideo-extensions-beta/refs/heads/main/uzAio_raw_onlyXT.json'
   }
 ];
