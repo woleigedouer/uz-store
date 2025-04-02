@@ -75,7 +75,8 @@ a {
   display: flex;
   flex-direction: column;
   background-color: var(--bg-secondary);
-  height: 100%; /* 使所有卡片高度一致 */
+  height: auto; /* 改回自动高度 */
+  min-height: 150px; /* 设置最小高度 */
 }
 
 .resource-header {
@@ -94,7 +95,7 @@ a {
   color: var(--text-secondary);
   margin-bottom: 10px;
   font-size: 0.9em;
-  min-height: 40px; /* 给描述区域一个最小高度 */
+  min-height: 25px; /* 减小描述区域的最小高度 */
 }
 
 /* 按钮样式 */
@@ -166,6 +167,7 @@ a {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 20px;
+    align-items: start; /* 让卡片从顶部对齐 */
   }
 }
 
