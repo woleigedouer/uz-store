@@ -75,12 +75,14 @@ a {
   display: flex;
   flex-direction: column;
   background-color: var(--bg-secondary);
+  height: 100%; /* 使所有卡片高度一致 */
 }
 
 .resource-header {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+  flex: 1; /* 让描述区域自动填充空间 */
 }
 
 .resource-title {
@@ -92,6 +94,7 @@ a {
   color: var(--text-secondary);
   margin-bottom: 10px;
   font-size: 0.9em;
+  min-height: 40px; /* 给描述区域一个最小高度 */
 }
 
 /* 按钮样式 */
@@ -100,6 +103,7 @@ a {
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
+  margin-top: auto; /* 确保按钮行位于底部 */
 }
 
 .btn {
